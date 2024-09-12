@@ -56,9 +56,11 @@ def main():
     # Get user input for the number of squares
     while True:
         try:
-            num_squares = int(input("Enter the number of squares to draw: "))
+            num_squares = int(input("Enter the number of squares to draw (between 1 and 15): "))
             if num_squares <= 0:
-                print("Please enter a positive integer.")
+                print("Please enter a positive integer between 1 and 15.")
+            elif num_squares > 15:
+                print("Please enter a positive integer between 1 and 15.")
             else:
                 break
         except ValueError:
