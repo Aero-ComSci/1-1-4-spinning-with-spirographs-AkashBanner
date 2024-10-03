@@ -6,7 +6,31 @@
 1. Compare and contrast zero-iteration conditions and infinite loops.
 
 Zero iteration conditions occur when the starting condition for a loop is always false, and thus the loop never executes in the first place. However, infinite loops occur when the starting condition for a loop is true and never becomes false, and thus, runs indefinitely. Zero-iteration conditions are useful for scenarios in which it is essential for initial loop conditions to not be met, and infinite loops are essential for continuous executions, which there often being internal mechanisms to break out of the loop.
-   
+
+Infinite loops: 
+```python
+while True:
+    try:
+        num_squares = int(input("Enter the number of squares to draw (between 1 and 15): "))
+        if num_squares <= 0:
+            print("Please enter a positive integer between 1 and 15.")
+        elif num_squares > 15:
+            print("Please enter a positive integer between 1 and 15.")
+        else:
+            break
+    except ValueError:
+        print("Invalid input. Please enter a valid integer.")
+```
+Zero iteration conditions:
+```python
+for i in range(num_squares):
+    fill_color = fill_colors[i % len(fill_colors)]
+    border_color = border_colors[(i + 1) % len(border_colors)]
+    # Drawing code
+    size -= step
+```
+This loop won't run if num_squares is 0 in the draw_squares_with_borders function.
+
 3. A link to your code where you solve the following problem. Take the screen size of 800px. Create code or algorithm that always places the object(s), up to 5, in the center an equal distance from one another and from the edges of the screen.
 
 ```python
