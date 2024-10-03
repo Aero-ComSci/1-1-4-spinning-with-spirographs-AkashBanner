@@ -9,7 +9,7 @@ Zero iteration conditions occur when the starting condition for a loop is always
    
 3. A link to your code where you solve the following problem. Take the screen size of 800px. Create code or algorithm that always places the object(s), up to 5, in the center an equal distance from one another and from the edges of the screen.
 
-'''python
+```python
 def draw_squares_with_borders(turtle_obj, num_squares, base_size, step):
     # Draws a series of squares with varying sizes, filled colors, and borders.
     size = base_size + (num_squares - 1) * step
@@ -22,7 +22,7 @@ def draw_squares_with_borders(turtle_obj, num_squares, base_size, step):
     random_fill_color = (random.random(), random.random(), random.random())  # Randomized color for fills of each concentric square.
     draw_filled_square(turtle_obj, size, random_fill_color)
     draw_square_border(turtle_obj, size + step, border_colors[0], 3)
-'''
+```
 
 5. Concentric Squares -- Add a screenshot of your result and the code to create it on your repo.
 Objective: Write a Python program using the turtle module to draw a pattern of concentric squares. The pattern should be created using nested loops.
