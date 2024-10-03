@@ -4,8 +4,27 @@
 *Complete the following.*
 
 1. Compare and contrast zero-iteration conditions and infinite loops.
-2. A link to your code where you solve the following problem. Take the screen size of 800px. Create code or algorithm that always places the object(s), up to 5, in the center an equal distance from one another and from the edges of the screen.
-3. Concentric Squares -- Add a screenshot of your result and the code to create it on your repo.
+
+Zero iteration conditions occur when the starting condition for a loop is always false, and thus the loop never executes in the first place. However, infinite loops occur when the starting condition for a loop is true and never becomes false, and thus, runs indefinitely. Zero-iteration conditions are useful for scenarios in which it is essential for initial loop conditions to not be met, and infinite loops are essential for continuous executions, which there often being internal mechanisms to break out of the loop.
+   
+3. A link to your code where you solve the following problem. Take the screen size of 800px. Create code or algorithm that always places the object(s), up to 5, in the center an equal distance from one another and from the edges of the screen.
+
+'''python
+def draw_squares_with_borders(turtle_obj, num_squares, base_size, step):
+    # Draws a series of squares with varying sizes, filled colors, and borders.
+    size = base_size + (num_squares - 1) * step
+    fill_colors = ["red", "blue", "green", "yellow", "purple", "orange", "pink", "cyan", "magenta", "brown"]
+    border_colors = ["black", "grey", "white", "darkblue", "darkgreen", "darkred", "darkorange", "darkviolet", "darkcyan", "darkbrown"]
+
+    turtle_obj.penup()
+    turtle_obj.goto(-size / 2, size / 2)
+    turtle_obj.pendown()
+    random_fill_color = (random.random(), random.random(), random.random())  # Randomized color for fills of each concentric square.
+    draw_filled_square(turtle_obj, size, random_fill_color)
+    draw_square_border(turtle_obj, size + step, border_colors[0], 3)
+'''
+
+5. Concentric Squares -- Add a screenshot of your result and the code to create it on your repo.
 Objective: Write a Python program using the turtle module to draw a pattern of concentric squares. The pattern should be created using nested loops.
 
 Instructions:
